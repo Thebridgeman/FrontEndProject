@@ -1,0 +1,21 @@
+body {
+    margin: 50px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.btn, select {
+    margin: 10px;
+}
+
+.filter-form {
+    display: flex;
+    margin: 30px 0;
+}
+
+.table {
+    margin: 20px 0;
+}
+
