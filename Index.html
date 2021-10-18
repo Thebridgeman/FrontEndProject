@@ -24,7 +24,8 @@
     <h2> HR Application </h2>
 
     <section class="filter-form">
-        <button type="button" class="btn btn-primary">Add New Employee</button>
+        <!-- Add button function-->
+        <button type="button" class="btn btn-primary" onclick="toggleVisibility();">Add New Employee</button>
         <select name="filter" id="filter" class="form-select">
             <option value="0" selected disabled hidden>Department</option>
             <option value="All">All</option>
@@ -35,6 +36,28 @@
         </select>
         <button type="button" class="btn btn-secondary">Filter By Department</button>
     </section>
+
+    <div class="add-form" id="add-form" style="display: none;">
+        <form id="form" onsubmit="event.preventDefault();">
+            <label for="niNumber" id="niNumber">NI Number:</label>
+            <input type="text" name="ninumber">
+
+            <label for="name" id="name">Name:</label>
+            <input type="text" name="name">
+
+            <label for="tel" id="tel">Phone Number:</label>
+            <input type="text" name="tel">
+
+            <label for="address" id="address">Address:</label>
+            <input type="text" name="address">
+
+            <label for="dept" id="dept">Department:</label>
+            <input type="text" name="dept">
+
+            <button class="btn btn-primary" id="action">Add</button>
+            <button class="btn btn-danger" onclick="toggleVisibility();">Close</button>
+        </form>
+    </div>
 
 <!-- Table headings -->
     <table class="table" id="table">
