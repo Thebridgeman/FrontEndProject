@@ -8,13 +8,28 @@ let data = [
     {niNumber: "000000004", name: "Jill Joll", tel: "07000000004", address: "5 Another Street", dept: "HR"},
 ]
 
-// display data from JSON
+// keep track of the form
+let parent = document.getElementById('tableBody');
 
-function display() {
-    let parent = document.getElementById('tableBody');
 
-    data.forEach(element => {
+// edit data in the JSON
+function edit() {
+
+}
+
+// delete data from JSON
+
+function del() {
+    
+}
+
+// dynamically display data
+function display(arr) {
+    parent.innerHTML = ""; // clear form
+
+    arr.forEach(element => {
         let entry = document.createElement('tr');
+        entry.className = "item";
 
         // creating elements for each value in table
         let niNumber = document.createElement('td');
@@ -67,13 +82,19 @@ function display() {
     })
 };
 
+display(data);
+
 function filter() {
-    // filters the data by department
+    let input = document.getElementById('filter').value;
+    
+    // filter data for only desired department
+    
+    // TO DO -> filter for all departments?
 
-    // for loop for all things in the filtered array
+    let result = data.filter(item => item.dept == input);
+
+    display(result);
 }
-
-display();
 
 let visible = false;
 

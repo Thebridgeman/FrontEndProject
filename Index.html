@@ -26,6 +26,8 @@
     <section class="filter-form">
         <!-- Add button function-->
         <button type="button" class="btn btn-primary" onclick="toggleVisibility();">Add New Employee</button>
+
+
         <select name="filter" id="filter" class="form-select">
             <option value="0" selected disabled hidden>Department</option>
             <option value="All">All</option>
@@ -34,8 +36,9 @@
             <option value="HR">HR</option>
             <option value="Digital">Digital</option>
         </select>
-        <button type="button" class="btn btn-secondary">Filter By Department</button>
+        <button type="button" class="btn btn-secondary" onclick="filter();">Filter By Department</button>
     </section>
+
 
     <div class="add-form" id="add-form" style="display: none;">
         <form id="form" onsubmit="event.preventDefault();">
