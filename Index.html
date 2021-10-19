@@ -42,22 +42,22 @@
 
     <div class="add-form" id="add-form" style="display: none;">
         <form id="form" onsubmit="event.preventDefault();">
-            <label for="niNumber" id="niNumber">NI Number:</label>
-            <input type="text" name="ninumber">
+            <label for="niNumber">NI Number:</label>
+            <input type="text" name="ninumber"  id="niNumber">
 
-            <label for="name" id="name">Name:</label>
-            <input type="text" name="name">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name">
 
-            <label for="tel" id="tel">Phone Number:</label>
-            <input type="text" name="tel">
+            <label for="tel">Phone Number:</label>
+            <input type="text" name="tel" id="tel">
 
-            <label for="address" id="address">Address:</label>
-            <input type="text" name="address">
+            <label for="address">Address:</label>
+            <input type="text" name="address" id="address">
 
-            <label for="dept" id="dept">Department:</label>
-            <input type="text" name="dept">
+            <label for="dept">Department:</label>
+            <input type="text" name="dept" id="dept">
 
-            <button class="btn btn-primary" id="action">Add</button>
+            <button class="btn btn-primary" id="action" onclick="add();">Add</button>
             <button class="btn btn-danger" onclick="toggleVisibility();">Close</button>
         </form>
     </div>

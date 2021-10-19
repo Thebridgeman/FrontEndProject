@@ -11,18 +11,6 @@ let data = [
 // keep track of the form
 let parent = document.getElementById('tableBody');
 
-
-// edit data in the JSON
-function edit() {
-
-}
-
-// delete data from JSON
-
-function del() {
-    
-}
-
 // dynamically display data
 function display(arr) {
     parent.innerHTML = ""; // clear form
@@ -49,12 +37,12 @@ function display(arr) {
 
         // Edit button
 
-        let edit = document.createElement('button');
-        edit.type = 'button';
-        edit.className ="btn btn-dark";
-        edit.innerHTML = 'Edit';
-        edit.onclick = function() {
-            console.log("edit");
+        let editbutton = document.createElement('button');
+        editbutton.type = 'button';
+        editbutton.className ="btn btn-dark"; 
+        editbutton.innerHTML = 'Edit';
+        editbutton.onclick = function() {
+            editData(element.niNumber);
         }
 
         // delete button
@@ -63,13 +51,13 @@ function display(arr) {
         del.className ="btn btn-light";
         del.innerHTML = 'Delete';
         del.onclick = function() {
-            console.log("delete");
+            deleteData(element.niNumber);
         }
 
         // adding elements for each value to the table to be displayed on the page
 
         let actions = document.createElement('td');
-        actions.appendChild(edit);
+        actions.appendChild(editbutton);
         actions.appendChild(del);
 
         entry.appendChild(niNumber);
@@ -87,9 +75,9 @@ display(data);
 function filter() {
     let input = document.getElementById('filter').value;
     
-    // filter data for only desired department
+    // filter data by department
     
-    // TO DO -> filter for all departments?
+    // cant yet filter for all departments!!!
 
     let result = data.filter(item => item.dept == input);
 
@@ -108,4 +96,34 @@ function toggleVisibility() {
         form.style.display = "none";
         visible = false;
     }
+} 
+
+// add
+
+function add() {
+    let niNumber = document.getElementById('niNumber').value;
+    let name = document.getElementById('name').value;
+    let tel = document.getElementById('tel').value;
+    let address = document.getElementById('address').value;
+    let dept = document.getElementById('dept').value;
+
+    let newInput = {niNumber: niNumber, name: name, tel: tel, address: address, dept: dept};
+    data.push(newInput);
+
+    display(data);
 }
+
+// delete 
+
+function deleteData(value){
+
+        let index = data.indexOf (value);
+        if (index == niNumber) {
+            data.splice(index, 1);
+        }
+    }
+        return data;
+
+
+
+ 
