@@ -93,6 +93,12 @@ function toggleVisibility() {
         form.style.display = "block";
         visible = true;
     } else {
+        document.getElementById('niNumber').value = '';
+        document.getElementById('name').value = '';
+        document.getElementById('tel').value = '';
+        document.getElementById('address').value = '';
+        document.getElementById('dept').value = '';
+
         form.style.display = "none";
         visible = false;
     }
@@ -116,14 +122,45 @@ function add() {
 // delete 
 
 function deleteData(value){
+    for(let i = 0; i < data.length; i++){
 
-        let index = data.indexOf (value);
-        if (index == niNumber) {
-            data.splice(index, 1);
+        if(data[i].niNumber == value){
+            data.splice(i, 1);
         }
     }
-        return data;
+    display(data); 
+} 
 
+// edit
 
+function editData(value){
+    toggleVisibility();
 
- 
+    const result = data.find(element => element.niNumber == value);
+    
+    document.getElementById('niNumber').value = result.niNumber;
+    document.getElementById('name').value = result.name;
+    document.getElementById('tel').value = result.tel;
+    document.getElementById('address').value = result.address;
+    document.getElementById('dept').value = result.dept;
+}
+
+function saveEditedData() {
+    let niNumber = document.getElementById('niNumber').value;
+    let name = document.getElementById('name').value;
+    let tel = document.getElementById('tel').value;
+    let address = document.getElementById('address').value;
+    let dept = document.getElementById('dept').value;
+
+    let newInput = {niNumber: niNumber, name: name, tel: tel, address: address, dept: dept};
+
+    for(let i = 0; i < data.length; i++) {
+        if(data[i].niNumber == niNumber) {
+            data[i] = newInput;
+        }
+    }
+    
+    toggleVisibility();
+    display(data);
+}
+        
