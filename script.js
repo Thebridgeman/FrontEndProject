@@ -76,12 +76,15 @@ function filter() {
     let input = document.getElementById('filter').value;
     
     // filter data by department
+    if(input == "All"){
+        display(data);
+    }
+    else {
     
-    // cant yet filter for all departments!!!
+        let result = data.filter(item => item.dept == input);
 
-    let result = data.filter(item => item.dept == input);
-
-    display(result);
+        display(result);
+    }
 }
 
 let visible = false;
