@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<!-- little pretend home button at the top -->
     <nav class ="navbar">
         <a class="navbar-brand" href="#">Home</a>
     </nav>
@@ -24,7 +24,7 @@
     <h2> HR Application </h2>
 
     <section class="filter-form">
-        <!-- Add button function-->
+        <!-- Add button -->
         <button type="button" class="btn btn-primary" onclick="toggleVisibility();">Add New Employee</button>
 
 
@@ -36,6 +36,8 @@
             <option value="HR">HR</option>
             <option value="Digital">Digital</option>
         </select>
+
+        <!-- filter button -->
         <button type="button" class="btn btn-secondary" onclick="filter();">Filter By Department</button>
     </section>
 
@@ -56,6 +58,8 @@
 
             <label for="dept">Department:</label>
             <input type="text" name="dept" id="dept">
+
+            <!-- add, edit and close button -->
 
             <button class="btn btn-primary" id="action" onclick="add();">Add</button>
             <button class="btn btn-secondary" id="action" onclick="saveEditedData();">Edit</button>

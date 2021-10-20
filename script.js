@@ -8,10 +8,10 @@ let data = [
     {niNumber: "000000004", name: "Jill Joll", tel: "07000000004", address: "5 Another Street", dept: "HR"},
 ]
 
-// keep track of the form
+//  track  the form
 let parent = document.getElementById('tableBody');
 
-// dynamically display data
+//  display data
 function display(arr) {
     parent.innerHTML = ""; // clear form
 
@@ -19,7 +19,7 @@ function display(arr) {
         let entry = document.createElement('tr');
         entry.className = "item";
 
-        // creating elements for each value in table
+        // creating elements for values in table
         let niNumber = document.createElement('td');
         niNumber.innerText = element.niNumber; 
 
@@ -35,7 +35,7 @@ function display(arr) {
         let dept = document.createElement('td');
         dept.innerText = element.dept;
 
-        // Edit button
+        // edit button
 
         let editbutton = document.createElement('button');
         editbutton.type = 'button';
@@ -54,7 +54,7 @@ function display(arr) {
             deleteData(element.niNumber);
         }
 
-        // adding elements for each value to the table to be displayed on the page
+        // adding elements for each value to the table
 
         let actions = document.createElement('td');
         actions.appendChild(editbutton);
@@ -86,6 +86,8 @@ function filter() {
         display(result);
     }
 }
+
+// add form
 
 let visible = false;
 
